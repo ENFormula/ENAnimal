@@ -8,3 +8,6 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+  var mongoose = require('mongoose');
+  mongoose.connect('mongodb://hulio:enmivida1@ds020218.mlab.com:20218/hulio/dogs');
