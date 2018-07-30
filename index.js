@@ -4,6 +4,7 @@ bodyParser      = require("body-parser"),
 methodOverride  = require("method-override"),
 mongoose        = require('mongoose');
 
+var PORT = process.env.PORT||5000;
 // Connection to DB
 mongoose.connect('mongodb://hulio:enmivida1@ds020218.mlab.com:20218/hulio', function(err, res) {
 if(err) throw err;
@@ -46,6 +47,6 @@ tvshows.route('/tvshows/:id')
 app.use('/api', tvshows);
 
 // Start server
-app.listen(process.env.PORT, function() {
-console.log("Node server running on http://localhost:3000");
+app.listen( PORT, function() {
+console.log("Node server running on http://localhost:5000");
 });
