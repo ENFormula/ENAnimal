@@ -23,15 +23,9 @@ var TVShowCtrl = require('./controllers/dogs');
 // Example Route
 var router = express.Router();
 router.get('/', function(req, res) {
-res.send("Hello world!");
+res.send("Hello world!!!");
 });
 app.use(router);
-// API routes
-var tvshows = express.Router();
-/*tvshows.get('/tvshows', function(req, res) {
-  res.send("Hello world!"+ TVShowCtrl.findAllTVShows);
-  });
-  app.use(tvshows);*/
 // API routes
 var tvshows = express.Router();
 
