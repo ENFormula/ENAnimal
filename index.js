@@ -19,6 +19,9 @@ app.use(methodOverride());
 // Import Models and controllers
 var models     = require('./models/dogs')(app, mongoose);
 var TVShowCtrl = require('./controllers/dogs');
+var LoginUserCtrl = require('./controllers/login');
+var ProfileUserCtrl = require('./controllers/profile');
+var RegisterUserCtrl = require('./controllers/register');
 
 // Example Route
 var router = express.Router();
@@ -27,18 +30,19 @@ res.send("Hello world!!!!!");
 });
 app.use(router);
 // API routes
-var tvshows = express.Router();
 
-tvshows.route('/tvshows')
-.get(TVShowCtrl.findAllTVShows)
-.post(TVShowCtrl.addTVShow);
+var enAnimals = express.Router();
 
-tvshows.route('/tvshows/:id')
-.get(TVShowCtrl.findById)
-.put(TVShowCtrl.updateTVShow)
-.delete(TVShowCtrl.deleteTVShow);
+enAnimals.route('/user/register')
+.post(LoginUserCtrl.createUser);
 
-app.use('/api', tvshows);
+enAnimals.route('/user/login')
+.post(LoginUserCtrl.loginUser);
+
+enAnimals.route('/user/:id')
+.get(ProfileUserCtrl.findById)
+
+app.use('/api', enAnimals);
 
 // Start server
 app.listen( PORT, function() {
