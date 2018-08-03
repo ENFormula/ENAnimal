@@ -4,7 +4,7 @@ bodyParser      = require("body-parser"),
 methodOverride  = require("method-override"),
 mongoose        = require('mongoose');
 
-var PORT = process.env.PORT||5000;
+var PORT = process.env.PORT||8080;
 // Connection to DB
 mongoose.connect('mongodb://hulio:enmivida1@ds020218.mlab.com:20218/hulio', function(err, res) {
 if(err) throw err;
@@ -48,5 +48,5 @@ app.use('/api', enAnimals);
 
 // Start server
 app.listen( PORT, function() {
-console.log("Node server running on http://localhost:5000");
+console.log("Node server running on http://localhost:8080");
 });
