@@ -9,7 +9,6 @@ exports.findAllTVShows = function(req, res) {
        res.status(200).jsonp(tvshows);
    });
 };
-
 //GET - Return a TVShow with specified ID
 exports.findById = function(req, res) {
    TVShow.findById(req.params.id, function(err, tvshow) {
