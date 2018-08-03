@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 
 // Import Models and controllers
-var models = require('./models/dogs')(app, mongoose);
+//var models = require('./models/dogs')(app, mongoose);
 var modelUser = require('./models/user')(app, mongoose);
 
 var TVShowCtrl = require('./controllers/dogs');
