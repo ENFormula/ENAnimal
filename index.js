@@ -17,7 +17,9 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 
 // Import Models and controllers
-var models     = require('./models/dogs')(app, mongoose);
+var models = require('./models/dogs')(app, mongoose);
+var modelUser = require('./models/user')(app, mongoose);
+
 var TVShowCtrl = require('./controllers/dogs');
 var LoginUserCtrl = require('./controllers/login');
 var ProfileUserCtrl = require('./controllers/profile');
@@ -34,7 +36,7 @@ app.use(router);
 var enAnimals = express.Router();
 
 enAnimals.route('/user/register')
-.post(LoginUserCtrl.createUser);
+.post(RegisterUserCtrl.createUser);
 
 enAnimals.route('/user/login')
 .post(LoginUserCtrl.loginUser);
