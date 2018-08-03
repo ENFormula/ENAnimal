@@ -14,7 +14,6 @@ exports.findAllTVShows = function(req, res) {
 exports.findById = function(req, res) {
    TVShow.findById(req.params.id, function(err, tvshow) {
    if(err) return res.send(500, err.message);
-
    console.log('GET /tvshow/' + req.params.id);
        res.status(200).jsonp(tvshow);
    });
