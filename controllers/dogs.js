@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 var TVShow  = mongoose.model('dogs');
 
-//GET - Return all tvshows in the DB
 exports.findAllTVShows = function(req, res) {
    TVShow.find(function(err, tvshows) {
    if(err) res.send(500, err.message);
