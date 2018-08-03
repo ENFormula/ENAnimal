@@ -16,6 +16,7 @@ exports.createUser = function (req, res) {
         animals: req.body.animals,
         userName: req.body.userName
     });
+    console.log(req.body);
     userObject.save(function (err, userObject) {
         if (err) 
             return res.send(500, err.message);

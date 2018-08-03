@@ -44,8 +44,9 @@ enAnimals.route('/user/login')
 enAnimals.route('/user/:id')
 .get(ProfileUserCtrl.findById)
 
-app.use('/api', enAnimals);
 
+app.use('/api', enAnimals);
+app.use(bodyParser.json())
 // Start server
 app.listen( PORT, function() {
 console.log("Node server running on http://localhost:8080");
