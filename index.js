@@ -42,7 +42,8 @@ enAnimals.route('/user/login')
 .post(LoginUserCtrl.loginUser);
 
 enAnimals.route('/user/:userName')
-.get(ProfileUserCtrl.findById)
+.get(ProfileUserCtrl.findByName)
+.put(ProfileUserCtrl.updateUserCollection);
 
 
 app.use('/api', enAnimals);
