@@ -4,7 +4,7 @@ var userProfile  = mongoose.model('user');
 //GET - Return a user with an specific userName
 exports.findByName = function(req, res) {
 
-userProfile.findOne({ 'name': req.params.userName }, function (err, user) {
+userProfile.findOne({ 'userName': req.params.userName }, function (err, user) {
 
     if (err) return res.status(500).jsonp({"error": "error"});
     if(!user) return res.status(404).send({message: "No hay usuarios para dicho nombre de usuario"});
@@ -16,7 +16,7 @@ userProfile.findOne({ 'name': req.params.userName }, function (err, user) {
 
 exports.updateUserCollection = function(req, res) {
 
-    userProfile.findOne({ 'name': req.params.userName }, function(err, user) {
+    userProfile.findOne({ 'userName': req.params.userName }, function(err, user) {
 
         if(err) return res.status(500).send({message: "Se ha producido un error inesperado"});
         if(!user) return res.status(404).send({message: "No hay usuarios para dicho nombre de usuario"});
