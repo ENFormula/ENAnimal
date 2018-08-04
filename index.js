@@ -41,7 +41,7 @@ enAnimals.route('/user/register')
 enAnimals.route('/user/login')
 .post(LoginUserCtrl.loginUser);
 
-enAnimals.route('/user/:id')
+enAnimals.route('/user/:userName')
 .get(ProfileUserCtrl.findById)
 
 
