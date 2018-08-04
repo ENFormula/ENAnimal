@@ -1,19 +1,33 @@
 var mongoose = require('mongoose');
-var TVShow  = mongoose.model('dogs');
+var user = mongoose.model('user');
 
+//GET - Return a user with an specific userName
+exports.loginUser = function (req, res) {
 
-//POST - /user/login
-exports.loginUser = function(req, res) {
-   console.log('POST');
-   console.log(req.body);
+    user
+        .findOne({
+            'userName': req.body.userName
+        }, function (err, userExits) {
 
-   var tvshow = new dogs({
-       name:    req.body.name
-   });
+            if (err) 
+                return res.status(500).jsonp({"error": "error"});
+            if (userExits) {
+                if (req.body.password == userExits.password) {
 
-   tvshow.save(function(err, tvshow) {
-       if(err) return res.send(500, err.message);
-   res.status(200).jsonp(tvshow);
-   });
-};
+                    return res
+                        .status(200)
+                        .jsonp(userExits);
 
+                } else {
+                    return res
+                        .status(401)
+                        .jsonp({"error": "Contraseña incorrecta"});
+                }
+            } else {
+                return res
+                    .status(401)
+                    .jsonp({"error": "Usuario no registrado"});
+
+            }
+        });
+}
