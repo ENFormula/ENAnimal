@@ -24,6 +24,7 @@ var TVShowCtrl = require('./controllers/dogs');
 var LoginUserCtrl = require('./controllers/login');
 var ProfileUserCtrl = require('./controllers/profile');
 var RegisterUserCtrl = require('./controllers/register');
+var AdvertsCtrl = require('./controllers/adverts');
 
 // Example Route
 var router = express.Router();
@@ -45,6 +46,8 @@ enAnimals.route('/user/:userName')
 .get(ProfileUserCtrl.findByName)
 .put(ProfileUserCtrl.updateUserCollection);
 
+enAnimals.route('/adverts')
+.get(AdvertsCtrl.findAllAdverts);
 
 app.use('/api', enAnimals);
 app.use(bodyParser.json())
