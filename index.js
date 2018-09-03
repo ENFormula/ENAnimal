@@ -19,6 +19,7 @@ app.use(methodOverride());
 // Import Models and controllers
 var models = require('./models/dogs')(app, mongoose);
 var modelsUser = require('./models/user')(app, mongoose);
+var modelsAdvert = require('./models/adverts')(app, mongoose);
 
 var TVShowCtrl = require('./controllers/dogs');
 var LoginUserCtrl = require('./controllers/login');
