@@ -50,6 +50,9 @@ enAnimals.route('/user/:userName')
 enAnimals.route('/adverts')
 .get(AdvertsCtrl.findAllAdverts);
 
+enAnimals.route('/adverts:username')
+.get(AdvertsCtrl.findByName);
+
 app.use('/api', enAnimals);
 app.use(bodyParser.json())
 // Start server
