@@ -43,7 +43,7 @@ enAnimals.route('/user/register')
 enAnimals.route('/user/login')
 .post(LoginUserCtrl.loginUser);
 
-enAnimals.route('/user/:userName')
+enAnimals.route('/user/:username')
 .get(ProfileUserCtrl.findByName)
 .put(ProfileUserCtrl.updateUserCollection);
 

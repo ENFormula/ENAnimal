@@ -28,7 +28,7 @@ exports = module.exports = function (app, mongoose) {
         animals: {
             type: [String]
         },
-        userName: {
+        username: {
             type: String
         }
 
