@@ -26,7 +26,7 @@ exports.createUser = function (req, res) {
         picture: req.body.picture,
         password: req.body.password,
         animals: req.body.animals,
-        userName: req.body.userName
+        username: req.body.username
     });
     console.log(req.body);
     user.findOne({

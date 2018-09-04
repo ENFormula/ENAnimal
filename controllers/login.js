@@ -1,12 +1,12 @@
 var mongoose = require('mongoose');
 var user = mongoose.model('user');
 
-//GET - Return a user with an specific userName
+//GET - Return a user with an specific username
 exports.loginUser = function (req, res) {
 
     user
         .findOne({
-            'userName': req.body.userName
+            'username': req.body.username
         }, function (err, userExits) {
 
             if (err) 
