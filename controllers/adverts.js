@@ -13,12 +13,12 @@ exports.findAllAdverts = function(req, res) {
 
  exports.findByName = function(req, res) {
     
-    adverts.find({ 'userName': req.params.userName }, function (err, user) {
+    adverts.find({ 'username': req.params.username }, function (err, adverts) {
     
         if (err) return res.status(500).jsonp({"error": "error"});
-        if(!user) return res.status(404).send({message: "No hay usuarios para dicho nombre de usuario"});
+        if(!adverts) return res.status(404).send({message: "No hay usuarios para dicho nombre de usuario"});
     
-        res.status(200).jsonp(user);
+        res.status(200).jsonp(adverts);
       });
     };
     
